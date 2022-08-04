@@ -1,0 +1,220 @@
+@use '../partials/palette';
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Poppins:wght@300&display=swap');
+
+* {
+	font-family: 'Merriweather', serif;
+	scroll-behavior: smooth;
+}
+
+html {
+	background-image: url(../assets/campfire.gif);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+
+.height {
+	height: 80vh;
+}
+
+header {
+	text-align: center;
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex-direction: column;
+  margin-right: 30px;
+
+	& h1 {
+		margin-top: 20px;
+		font-family: "Poppins", sans-serif;
+		font-size: 60px;
+		margin-bottom: 20px;
+		color: rgb(159, 125, 106);
+		text-shadow: 1px 1px 9px rgba(238, 99, 44, 0.75);
+	}
+
+	.search {
+		display: flex;
+		box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+		width: fit-content;
+		border-radius: 25px;
+
+		&--input {
+			border: none;
+			width: 240px;
+			border-top-left-radius: 25px;
+			border-bottom-left-radius: 25px;
+			padding: 15px;
+			padding-left: 20px;
+			background-color: palette.$prim-dark;
+			font-size: 15px;
+			color: palette.$prim-light;
+
+			&::placeholder {
+				color: rgba(235, 227, 223, 0.8);
+			}
+
+			&:focus {
+				outline: none;
+			}
+
+			&:hover ~ .search--button {
+				color: palette.$prim-light;
+			}
+		}
+
+		&--button {
+			width: 40px;
+			background-color: palette.$prim-dark;
+			border: none;
+			border-top-right-radius: 25px;
+			border-bottom-right-radius: 25px;
+
+			&:hover {
+				cursor: pointer;
+				color: palette.$prim-light;
+			}
+		}
+	}
+}
+
+#output {
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+	align-items: center;
+}
+
+.bookcard {
+	margin: 30px;
+	padding: 10px;
+	background-color: #5a4040;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+	width: 25%;
+	border-radius: 15px;
+	display: flex;
+
+	&--img {
+		border-radius: 15px;
+		width: 150px;
+		height: 230px;
+		margin-right: 20px;
+	}
+
+	&--title {
+		font-weight: bold;
+		font-size: 1.5rem;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		color: palette.$prim-light;
+	}
+
+	&--author {
+		color: palette.$prim-light;
+		margin-top: 5px;
+	}
+
+	&--description {
+		color: palette.$prim-light;
+		max-height: 200px;
+		overflow: scroll;
+		margin-bottom: 0px;
+		text-align: justify;
+		text-justify: inter-word;
+		padding-right: 10px;
+		overflow-x: hidden;
+	}
+
+	&--button {
+		margin-top: 10px;
+		width: 148px;
+		background-color: #863c44;
+		border: 1px solid palette.$prim-dark;
+		border-radius: 15px;
+		box-shadow: palette.$prim-dark 1px 2px 0 0;
+		color: palette.$prim-light;
+		cursor: pointer;
+		display: inline-block;
+		font-weight: 600;
+		padding: 0 18px;
+		line-height: 30px;
+		text-align: center;
+		text-decoration: none;
+		user-select: none;
+		-webkit-user-select: none;
+		touch-action: manipulation;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&--icon {
+			padding-left: 5px;
+			color: palette.$prim-dark;
+		}
+
+		&:hover .bookcard--button--icon {
+			color: palette.$prim-light;
+		}
+
+		&:active {
+			transform: translate(1px, 2px);
+		}
+	}
+
+	&--error {
+		text-align: center;
+		font-size: 15px;
+		padding: 10px;
+		width: 100%;
+		overflow: hidden;
+		font-style: italic;
+		letter-spacing: 0.5px;
+		color: palette.$prim-light;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.bookcard {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+
+		&--button {
+			margin-bottom: 15px;
+		}
+
+		&--img {
+			margin-right: 0px;
+		}
+	}
+}
+
+@media only screen and (min-width: 501px) and (max-width: 600px) {
+	.bookcard {
+		&--description {
+			text-align: left;
+		}
+	}
+}
+
+::-webkit-scrollbar {
+	width: 7px;
+
+	&-track {
+		background: #863c44;
+	}
+
+	&-thumb {
+		background: palette.$prim-dark;
+		border-radius: 5px;
+
+		&:hover {
+			background: #673543;
+		}
+	}
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Kais. Google Books</title>
+		<link rel="stylesheet" href="./style/style.css" />
+		<script src="https://kit.fontawesome.com/64d5bf7ff7.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<header class="height">
+			<h1>Kais. Google Books</h1>
+
+			<form class="search">
+				<input
+					type="text"
+					class="search--input"
+					id="search-input"
+					placeholder="What would you like to read?"
+				/>
+				<button
+					type="submit"
+					id="search-button"
+					class="search--button"
+					name="search-button"
+					value="submit"
+				>
+					<i
+						class="fa-solid fa-search fa-lg fa-fade"
+						style="--fa-animation-duration: 2s"
+						;
+					></i>
+				</button>
+			</form>
+		</header>
+
+		<main>
+			<div id="output"></div>
+		</main>
+		<script src="./index.js"></script>
+	</body>
+</html>
