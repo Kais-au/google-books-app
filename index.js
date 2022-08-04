@@ -1,3 +1,6 @@
+const bgAudio = document.getElementById("bgAudio");
+bgAudio.volume = 0.3;
+
 document.querySelector(".search").addEventListener("submit", (event) => {
 	// Prevent page reload
 	event.preventDefault();
